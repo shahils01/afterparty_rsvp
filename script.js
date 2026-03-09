@@ -12,16 +12,16 @@ scrollButtons.forEach((button) => {
 const form = document.getElementById('rsvpForm');
 const note = document.getElementById('rsvpNote');
 
-const RSVP_ENDPOINT = 'https://script.google.com/macros/s/AKfycbxF63V1OITf4qAvP-QzDcTFCDkTj-UmQENKOH5wU-g5kxppXC1j0zEQZ-54GND2LqhelQ/exec';
+const RSVP_ENDPOINT = 'https://script.google.com/macros/s/AKfycbz37JJk7x9wc8BrRz9XBsZIqCDCCbcIShnCyAA0oLmh_hkqMIWcooHrXW4qxXT6i3s36w/exec';
 
 if (form) {
   form.addEventListener('submit', async (event) => {
     event.preventDefault();
     const data = Object.fromEntries(new FormData(form));
     // Backward compatibility for pages that still use the old field name.
-    if (!data.after_party_attendance && data.afterparty_attendance) {
-      data.after_party_attendance = data.afterparty_attendance;
-    }
+    // if (!data.after_party_attendance && data.afterparty_attendance) {
+    //   data.after_party_attendance = data.afterparty_attendance;
+    // }
     if (note) {
       note.textContent = 'Sending RSVP...';
     }
